@@ -1,20 +1,5 @@
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-       
-        if (m>=n){
-            for (int i=0; i<m; i++){
-                if(nums1[m-1]>nums2[n-1]){
-                    
-                }
-            }
-        }
-        
-    }
-}
-
-class Solution {
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
-
         while (true){
             if (m==0 || n==0){
                 break;
@@ -22,6 +7,9 @@ class Solution {
             while(nums1[m-1]>=nums2[n-1]){
                 nums1[m+n-1]=nums1[m-1];
                 m--;
+                if (m==0 || n==0){
+                    break;
+                }
             }
             if (m==0 || n==0){
                 break;
@@ -29,6 +17,9 @@ class Solution {
             while(nums1[m-1]<nums2[n-1]){
                 nums1[m+n-1]=nums2[n-1];
                 n--;
+                if (m==0 || n==0){
+                    break;
+                }
             }            
         }
         if (m==0){
